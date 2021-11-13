@@ -1,0 +1,50 @@
+@import "../../../assets/scss/rem-calc.scss";
+
+nav {
+    align-items: center;
+    background-color: var(--bs-gray-200);
+    box-shadow: 3px 0px 3px rgb(0, 0, 0, 0.1);
+    height: toRem(70);
+    width: 100%;
+}
+
+.usuario-info {
+    max-height: toRem(40);
+}
+
+.usuario-nome {
+    color: var(--bs-gray-700);
+    font-size: toRem(16);
+    font-weight: 700;
+    line-height: toRem(20);
+}
+
+.usuario-role {
+    color: var(--bs-gray-600);
+    font-size: toRem(12);
+    font-weight: 400;
+    height: toRem(40);
+    line-height: toRem(14);
+}
+
+.avatar {
+    background-color: var(--bs-gray-400);
+    height: toRem(40);
+    width: toRem(40);
+}
+
+.avatar img {
+    height: toRem(40);
+    transition: all 500ms;
+}
+
+.avatar > img:hover {
+    box-shadow: var(--bs-gray-600) 0px 0px 10px 0px;
+}
+
+.dropdown-menu.show {
+    right: 0 !important;
+    transform: translate( toRem(-120), toRem(45)) !important;
+    width: auto !important;
+    will-change: transform;
+}

@@ -1,0 +1,102 @@
+<app-titulo-pagina titulo="Partituras" icone="file-text"></app-titulo-pagina>
+
+<div class="row">
+
+    <div class="col-12">
+        <div class="card border-0 rounded-5 shadow-sm">
+            <div class="card-body">
+
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div>
+                        <input class="form-control" type="text" name="" id="" placeholder="Compositor">
+                    </div>
+                    <div>
+                        <button class="btn btn-success" type="button">
+                            <i class="ft-plus me-1"></i>
+                            <span>Cadastrar partitura</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Compositor</th>
+                                <th>Obra</th>
+                                <th>Gênero</th>
+                                <th>Tema</th>
+                                <th>Intrumentação</th>
+                                <th>Referência</th>
+                                <th>PDF</th>
+                                <th class="text-center">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let perito of peritos">
+                                <td>
+                                    <a href="http://">
+                                        <img class="rounded" src="https://conteudo.imguol.com.br/c/parceiros/8c/2020/12/06/beethoven-em-pintura-oficial-1607252479825_v2_450x450.jpg" alt="" height="32">
+                                    </a>
+                                    <span class="ms-3 fw-bold">Ludwig Van Beethoven</span>
+                                </td>
+                                <td>-</td>
+                                <td>Clássico</td>
+                                <td>Sinfonia n.º 9</td>
+                                <td>Flauta</td>
+                                <td>Ref</td>
+                                <td>
+                                    <a href="https://drive.google.com/file/d/10T_A6_Ih_daJFfTfIQ7M4MJVMUjDRbU2/view?usp=sharing" target="_blank">
+                                        <img src="assets/img/icone/pdf.png"
+                                        alt="" height="32">
+                                    </a>
+                                </td>
+                                <td style="width: 100px;">
+                                    <a class="mx-1" title="Detalhar">
+                                        <i class="ft-eye fs-5 text-info"></i>
+                                    </a>
+                                    <a class="mx-3" [routerLink]="[]" title="Editar">
+                                        <i class="ft-edit fs-5 text-warning"></i>
+                                    </a>
+                                    <a class="mx-1" title="Excluir">
+                                        <i class="ft-trash-2 fs-5 text-danger"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <!--
+                <div class="table-responsive">
+                    <table class="table table-borderless table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>CPF</th>
+                                <th>Conselho</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fulano</td>
+                                <td>Fulano</td>
+                                <td>Fulano</td>
+                                <td>Fulano</td>
+                            </tr>
+                            <tr>
+                                <td>Fulano</td>
+                                <td>Fulano</td>
+                                <td>Fulano</td>
+                                <td>Fulano</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div> -->
+
+
+        </div>
+    </div>
+</div>

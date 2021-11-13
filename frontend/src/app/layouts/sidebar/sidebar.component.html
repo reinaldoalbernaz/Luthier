@@ -1,0 +1,36 @@
+<div class="sidebar" [ngClass]="{'d-block': mostrar, 'sidebar-fechado': !mostrar }">
+  <div class="menu">
+    <div class="logo d-flex align-items-center ps-3">
+      <img src="assets/img/logo/logo.png" alt="">
+      <span>MAESTRO</span>
+    </div>
+
+    <ul>
+      <li class="d-flex flex-column align-items-center" *ngFor="let menuItem of menuItems; let i=index">
+
+        <div class="menu-item d-block w-100" (click)="expandirMenu(i)">
+          <a class="d-flex align-items-center" routerLink="{{menuItem.path}}" routerLinkActive="link-ativo">
+            <i class="{{ menuItem.icon }}"></i>
+            <span>{{ menuItem.titulo }}</span>
+            <span class="ms-auto me-0" *ngIf="menuItem.submenu.length > 0">
+              <i class="ft-chevron-down" *ngIf="subMenuAtivo !== i"></i>
+              <i class="ft-chevron-up" *ngIf="subMenuAtivo === i"></i>
+            </span>
+          </a>
+        </div>
+
+        <div class="sub-menu w-100" [ngClass]="{'show': subMenuAtivo === i}">
+          <ng-container *ngFor="let submenu of menuItem.submenu" role="button">
+            <a class="d-flex align-items-center p-3" routerLink="{{submenu.path}}" routerLinkActive="link-ativo">
+              <i class="ms-4 ft-arrow-right" *ngIf="submenu.icon === ''"></i>
+              <i class="ms-4 {{submenu.icon}}" *ngIf="submenu.icon !== ''"></i>
+              <span>{{submenu.titulo}}</span>
+            </a>
+          </ng-container>
+        </div>
+
+      </li>
+    </ul>
+
+  </div>
+</div>

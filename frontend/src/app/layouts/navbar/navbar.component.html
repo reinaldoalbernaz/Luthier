@@ -1,0 +1,38 @@
+<nav class="d-flex flex-row align-items-center justify-content-end py-2 pe-4">
+
+    <div class="me-auto">
+        <span class="p-3 ps-4" (click)="ativarSidebar()" role="button">
+            <i class="ft-menu text-muted fs-4"></i>
+        </span>
+    </div>
+
+    <div class="me-3">
+        <span class="p-3" role="button">
+            <i class="ft-bell fs-4 text-muted"></i>
+        </span>
+    </div>
+
+    <div class="usuario-menu d-flex justify-content-end align-items-center">
+        <div class="usuario-info d-flex flex-column me-3">
+            <span class="usuario-nome">{{ nomeUsuario | titlecase }}</span>
+            <small class="usuario-role text-end">{{ role | titlecase }}</small>
+        </div>
+        <div class="avatar rounded-circle" placement="bottom-right" ngbDropdown role="button">
+            <img class="rounded-circle" src="assets/img/demo/usuario.jpg" alt="" id="dropdownBasic1" ngbDropdownToggle>
+            <!-- DROPDOWN -->
+            <div class="dropdown-menu" ngbDropdownMenu>
+                <button ngbDropdownItem>
+                    <i class="ft-settings me-2"></i>
+                    <span>configurações</span>
+                </button>
+                <div class="dropdown-divider"></div>
+                <button ngbDropdownItem (click)="deslogar()">
+                    <i class="ft-power me-2"></i>
+                    <span>Sair</span>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+</nav>

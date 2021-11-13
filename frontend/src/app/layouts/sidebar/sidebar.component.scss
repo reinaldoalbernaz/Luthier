@@ -1,0 +1,94 @@
+@import "../../../assets/scss/rem-calc.scss";
+
+.sidebar {
+    width: toRem(256);
+    min-height: 100%;
+    background-color: var(--gray-800);
+    transition: width 1000ms;
+    overflow: hidden;
+}
+
+.sidebar ul {
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar ul li .menu-item a {
+    height: auto;
+    padding: 1rem;
+    cursor: pointer;
+    list-style: none;
+    font-size: 1rem;
+    font-weight: 300;
+    text-decoration: none;
+    color: rgb(255, 255, 255, 0.7);
+}
+
+.sidebar ul li .menu-item a:hover {
+    color: var(--bs-white);
+    background: rgb(255, 255, 255, 0.1);
+}
+
+.sidebar ul li i {
+    font-size: 1rem;
+    margin: 0 1rem 0 0.4rem;
+}
+
+.sidebar ul li span {
+    font-size: 0.8rem;
+    line-height: 24px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+}
+
+.sidebar-fechado {
+    width: 0;
+    height: 100vh;
+    transition: width 500ms;
+}
+
+.sub-menu {
+    height: 0;
+    display: none;
+    opacity: 0;
+    transition: height 2s;
+}
+
+.sub-menu a {
+    color: rgb(255, 255, 255, 0.7);
+    text-decoration: none;
+}
+
+.sub-menu a:hover {
+    color: var(--bs-white);
+    background: rgb(255, 255, 255, 0.1);
+}
+
+.sub-menu.show {
+    height: auto !important;
+    opacity: 1 !important;
+    display: block !important;
+}
+
+.logo {
+    height: 70px;
+    margin-left: 0;
+    border-bottom: 0;
+    color: rgb(255, 255, 255, 0.9);
+}
+
+.logo img {
+    height: 32px;
+    margin-right: 1rem;
+}
+
+.logo span {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.link-ativo {
+    color: var(--bs-white);
+    background: rgb(255, 255, 255, 0.1);
+}

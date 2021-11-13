@@ -1,0 +1,15 @@
+main {
+  width: auto;
+  min-height: calc(100vh - 70px);
+  height: 100%;
+  background-color: var(--bs-gray-100);
+}
+
+.encolhido {
+  width: calc(100% - 16rem);
+  transition: width 400ms;
+}
+
+.expandido {
+  min-width: 100%;
+}

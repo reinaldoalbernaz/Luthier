@@ -1,0 +1,9 @@
+@import "../../../assets/scss/rem-calc.scss";
+
+a {
+    text-decoration: none;
+}
+
+.logo {
+    width: toRem(100);
+}
