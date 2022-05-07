@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DeviceDetectorService } from 'ngx-device-detector';
+import { Subscription } from 'rxjs';
+import { Dolar } from 'src/app/shared/models/dolar';
+import { DolarService } from 'src/app/shared/services/api/dolar.service';
 
 import { NavbarService } from './navbar.service';
 
@@ -9,19 +12,35 @@ import { NavbarService } from './navbar.service';
     templateUrl: './navbar.component.html',
     styleUrls: ['./navbar.component.scss'],
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent implements OnInit, OnDestroy {
+
     sidebar = true;
     nomeUsuario: string | undefined;
     role: string | undefined;
+
+    dolar: Dolar;
+
+    private subscribe = new Subscription();
+
     constructor(
         public navbarService: NavbarService,
+        private dolarService: DolarService,
         private deviceService: DeviceDetectorService,
         private router: Router
-    ) {}
+    ) { }
 
     ngOnInit() {
         this.ajustarLayoutMobile();
         this.buscarUsuarioLogado();
+        this.dolarAtual();
+    }
+
+    dolarAtual() {
+        this.subscribe.add(
+            this.dolarService.dolarAtual().subscribe({
+                next: (res: Dolar) => this.dolar = res,
+            })
+        );
     }
 
     buscarUsuarioLogado() {
@@ -50,5 +69,9 @@ export class NavbarComponent implements OnInit {
 
     deslogar() {
         this.router.navigate(['/']);
+    }
+
+    ngOnDestroy(): void {
+        this.subscribe.unsubscribe();
     }
 }

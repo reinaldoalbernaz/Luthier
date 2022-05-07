@@ -1,8 +1,15 @@
 <nav class="d-flex flex-row align-items-center justify-content-end py-2 pe-4">
 
-    <div class="me-auto">
+    <div class="me-3">
         <span class="p-3 ps-4" (click)="ativarSidebar()" role="button">
             <i class="ft-menu text-muted fs-4"></i>
+        </span>
+    </div>
+
+    <div class="me-3 me-auto">
+        <span class="d-flex align-items-center" title="Dólar">
+            <img src="assets/img/icone/dolar.png">
+            <span class="fw-bolder fs-5 ms-2 text-secondary" >{{ dolar?.compra | currency:'BRL':'symbol':'1.2-3' }}</span>
         </span>
     </div>
 

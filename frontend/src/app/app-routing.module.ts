@@ -20,21 +20,20 @@ const appRoutes: Routes = [
           import('./pages/inicio/inicio.module').then((m) => m.InicioModule),
       },
       {
-        path: 'partituras',
+          path: 'cotacoes',
         loadChildren: () =>
-          import('./pages/partituras/partituras.module').then((m) => m.PartiturasModule),
+          import('./pages/cotacoes/cotacoes.module').then((m) => m.CotacoesModule),
       },
-      // {
-      //   path: 'gestao',
-      //   data: {
-      //     autoridades: [Autoridades.ADMIN, Autoridades.CADASTRO_CONSULTA],
-      //   },
-      //   canActivate: [ControleRotaGuard],
-      //   loadChildren: () =>
-      //     import('./pages/cadastro/cadastro.module').then(
-      //       (m) => m.CadastroModule
-      //     ),
-      // },
+      {
+          path: 'produtos',
+        loadChildren: () =>
+            import('./pages/produtos/produtos.module').then((m) => m.ProdutosModule),
+      },
+      {
+          path: 'clientes',
+        loadChildren: () =>
+            import('./pages/clientes/clientes.module').then((m) => m.ClientesModule),
+      },
     ],
   },
   { path: '404', redirectTo: '**', pathMatch: 'full' },

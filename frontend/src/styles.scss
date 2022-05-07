@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "./assets/scss/variables.scss";
+
 body {
     font-family: "Open Sans", sans-serif;
     overflow-x: hidden;
@@ -39,54 +40,16 @@ a {
     cursor: pointer;
 }
 
-table {
-    background: var(--bs-white);
-    border-radius: 0.8rem;
-    margin: 0 auto;
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-}
-table * {
-    position: relative;
-}
-table td,
-table th {
-    padding: 0 1rem;
-    white-space: nowrap;
+table>tbody>tr {
+    height: 64px;
+    background-color: #fafafa;
 }
 
-table thead tr {
-    height: 3rem;
-    background: var(--gray-700);
+.espaco-linha{
+    height: 4px;
+    background-color: #fff;
 }
 
-table thead tr th {
-    color: var(--gray-100);
-    font-size: 1rem;
-    font-weight: unset;
-    line-height: 3rem;
-}
-
-table tbody tr {
-    height: 4rem;
-}
-
-table tbody tr:last-child {
-    border: 0;
-}
-
-tbody tr:nth-child(even) {
-    background-color: var(--gray-100);
-}
-tbody tr {
-    color: var(--gray-600);
-    font-size: 0.9rem;
-    font-weight: unset;
-    line-height: 3rem;
-}
-tbody tr:hover {
-    background-color: #e3e4e8;
-    color: var(--gray-800);
-    // cursor: pointer;
+table>tbody>tr>td {
+    vertical-align: middle !important;
 }
